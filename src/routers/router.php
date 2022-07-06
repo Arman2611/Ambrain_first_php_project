@@ -1,4 +1,5 @@
 <?php
+
 class Router
 {
 	private array $pages = array();

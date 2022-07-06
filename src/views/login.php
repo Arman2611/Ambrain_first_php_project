@@ -16,6 +16,19 @@
     <div>
         <span>Not registered?</span>
         <a href="/auth/register">Sign up</a>
+        <br><br>
     </div>
+    <?php
+	    // This will work when pressing on submit button
+	    if (count($_POST) > 0) {
+		
+		    // Including controllers
+		    require_once './src/controllers/controller.php';
+		    $controller = new Controller();
+		
+		    $controller->userLogin($_POST);
+		
+	    }
+    ?>
 </body>
 </html>

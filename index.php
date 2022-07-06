@@ -7,14 +7,13 @@
 $url = key($_GET);
 
 // Including routers
-require 'src/routers/router.php';
+require_once 'src/routers/router.php';
 $router = new Router();
 
-$router->addRoute("/", "index.php");
+$router->addRoute("/config/migration", "../configuration/migration.php");
+$router->addRoute("/", "main.php");
 $router->addRoute("/auth/register", "register.php");
 $router->addRoute("/auth/login", "login.php");
+$router->addRoute("/auth/logout", "../services/logout.php");
 
 $router->route("/".$url);
-
-// Setting connection to database
-//require_once 'src/configuration/connection.php';

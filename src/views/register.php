@@ -18,14 +18,18 @@
     <div>
         <span>Already registered?</span>
         <a href="/auth/login">Sign in</a>
+        <br><br>
     </div>
     <?php
+       // This will work when pressing on submit button
        if (count($_POST) > 0) {
-	       foreach ($_POST as $key => $value) {
-		       echo $key . ": " . $value . "<br>";
-	       }
+        
+	       // Including controllers
+           require_once './src/controllers/controller.php';
+           $controller = new Controller();
            
-           require_once './src/configuration/connection.php';
+           $controller->userRegistration($_POST);
+           
        }
     ?>
 </body>
